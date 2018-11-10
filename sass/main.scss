@@ -1,3 +1,122 @@
 @import '_vars';
+//body tags
+body{
+    font-family:$mainFont;
+}
+
+//navigation
+
+header{
+    background-color:$mainColor;
+    text-align: center;
+    position:fixed;
+    width:100%;
+    height:3em;
+    z-index:500;
+}
+.navToggle {
+    display:none;
+}
+.navToggleLabel{
+
+ display:flex;
+ align-items: center;
+ float:right;
+ padding:1em;
+ margin-top:-1em; //prolly not the right thing to do here
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    display:block;
+    background:black;
+    height:2px;
+    width:1.8em;
+    border-radius:2px;
+    position:relative;
+
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    content:'';
+    position: absolute;
+}
+.navToggleLabel span::before{
+    bottom:7px;
+}
+.navToggleLabel span::after{ //bottom looks janky not sure why
+    top: 7px;
+}
+
+nav{
+    position: absolute;
+    background:$mainColor;
+    width:100%;
+    text-align:center;
+    margin-right:1em;
+    top: 100%;
+    transform: scale(1,0); //nav scroll down animation
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav li{
+   margin:0 0 1em 1em;
+}
+
+nav a {
+    color:black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8 rem;
+    margin-right:1em;
+    opacity:0;
+    transition:opacity 200ms ease-in-out;
+}
+
+nav a:hover {
+    color:white;
+}
+.navToggle:checked ~ nav {
+    display:block;
+    transform: scale(1,1);
+}
+.navToggle:checked ~ nav a {
+    opacity:1;
+    transition:opacity 250ms ease-in-out 250ms;
+
+}
 
 
+
+//media queries 
+
+@media screen and (min-width:800px){
+    //navigation
+    .navToggleLabel{
+        display:none;
+    }
+    header{
+        display:grid;
+        grid-template-columns:1fr auto minmax(600px,3fr) 1fr;
+    }
+    .logo{
+        grid-column: 2 / span 1;
+    }
+    nav{
+        all:unset;
+        grid-column: 3 / 4;
+        display:flex;
+        justify-content: flex-end;
+        margin-top:1em;
+    }
+    nav ul{
+        display:flex;
+        justify-content: flex-end;
+    }
+    nav a{
+        opacity:1;
+    }
+}

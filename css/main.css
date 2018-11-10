@@ -1,60 +1,124 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
-  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
 }
 
-#animatedSkull {
-  width: 100px;
-  height: 100px;
-}
-
-#posterContainer {
-  border: 3px solid white;
-  padding: 20px;
-  height: 1200px;
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: black;
-}
-
-h1 {
-  color: white;
+header {
+  background-color: grey;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.7rem;
+  position: fixed;
+  width: 100%;
+  height: 3em;
+  z-index: 500;
 }
 
-#eyes {
+.navToggle {
+  display: none;
+}
+
+.navToggleLabel {
+  display: flex;
+  align-items: center;
+  float: right;
+  padding: 1em;
+  margin-top: -1em;
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 1.8em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  content: "";
+  position: absolute;
+}
+
+.navToggleLabel span::before {
+  bottom: 7px;
+}
+
+.navToggleLabel span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  background: grey;
+  width: 100%;
+  text-align: center;
+  margin-right: 1em;
+  top: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav li {
+  margin: 0 0 1em 1em;
+}
+
+nav a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8 rem;
+  margin-right: 1em;
   opacity: 0;
-  -webkit-animation: mover 1s infinite alternate;
-  animation: mover 1s infinite alternate;
+  transition: opacity 200ms ease-in-out;
 }
 
-@-webkit-keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
-@keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
-#skullHover {
-  height: 300px;
-  width: 200px;
-  margin: 30px 30px 30px 100px;
+nav a:hover {
+  color: white;
 }
 
-#skullHover :hover #eyes {
+.navToggle:checked ~ nav {
+  display: block;
+  transform: scale(1, 1);
+}
+
+.navToggle:checked ~ nav a {
   opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+  .navToggleLabel {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2/span 1;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
