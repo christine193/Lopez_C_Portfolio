@@ -1,13 +1,18 @@
 @import '_vars';
+
 //body tags
 body{
     font-family:$mainFont;
+    display:flex;
+    flex-wrap:wrap;
+
 }
 
 //navigation
 
 header{
-    background-color:$mainColor;
+ 
+    background:white;
     text-align: center;
     position:fixed;
     width:100%;
@@ -52,7 +57,7 @@ header{
 
 nav{
     position: absolute;
-    background:$mainColor;
+    background:white;
     width:100%;
     text-align:center;
     margin-right:1em;
@@ -88,7 +93,41 @@ nav a:hover {
     transition:opacity 250ms ease-in-out 250ms;
 
 }
+//portfolio section
+.portfolioContent{
+   // padding:10%;
+    flex: 1 1 80%;
+    min-height:200vh;
+    justify-content: center;
+    align-items:center;
+}
 
+.portfolio{
+    display:grid;
+    height:100%;
+   // grid-gap:10px;
+}
+
+.portfolioImage{
+    background: blueviolet;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode:screen;
+    background-position:center;
+}
+.portfolioImage:hover {
+    background-blend-mode:initial; //yess
+}
+
+#image1{
+    background-image: url(..//images/pink.jpg);
+
+ }
+ #image2{
+    background-image: url(..//images/pure.png);
+
+ }
 
 
 //media queries 
@@ -118,5 +157,16 @@ nav a:hover {
     }
     nav a{
         opacity:1;
+    }
+    .portfolio{ //portfolioo
+      
+       grid-template-columns:repeat(3, 1fr);
+       grid-template-rows:repeat(2,1fr);
+       grid-gap:10px;
+       padding: 5%;
+    
+    }
+    .portfolioContent{
+        min-height:100vh;
     }
 }

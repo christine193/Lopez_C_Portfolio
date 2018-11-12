@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header {
-  background-color: grey;
+  background: white;
   text-align: center;
   position: fixed;
   width: 100%;
@@ -51,7 +53,7 @@ header {
 
 nav {
   position: absolute;
-  background: grey;
+  background: white;
   width: 100%;
   text-align: center;
   margin-right: 1em;
@@ -89,6 +91,39 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
+.portfolioContent {
+  flex: 1 1 80%;
+  min-height: 200vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio {
+  display: grid;
+  height: 100%;
+}
+
+.portfolioImage {
+  background: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: screen;
+  background-position: center;
+}
+
+.portfolioImage:hover {
+  background-blend-mode: initial;
+}
+
+#image1 {
+  background-image: url(..//images/pink.jpg);
+}
+
+#image2 {
+  background-image: url(..//images/pure.png);
+}
+
 @media screen and (min-width: 800px) {
   .navToggleLabel {
     display: none;
@@ -118,6 +153,17 @@ nav a:hover {
 
   nav a {
     opacity: 1;
+  }
+
+  .portfolio {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 5%;
+  }
+
+  .portfolioContent {
+    min-height: 100vh;
   }
 }
 
