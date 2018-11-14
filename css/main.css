@@ -3,6 +3,14 @@ body {
   font-family: "Open Sans", sans-serif;
   display: flex;
   flex-wrap: wrap;
+  display: grid;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
 }
 
 header {
@@ -93,7 +101,7 @@ nav a:hover {
 
 .portfolioContent {
   flex: 1 1 80%;
-  min-height: 200vh;
+  min-height: 300vh;
   justify-content: center;
   align-items: center;
 }
@@ -104,16 +112,16 @@ nav a:hover {
 }
 
 .portfolioImage {
-  background: blueviolet;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-blend-mode: screen;
+  background-blend-mode: soft-light;
   background-position: center;
+  background-color: teal;
 }
 
 .portfolioImage:hover {
-  background-blend-mode: initial;
+  background-blend-mode: inherit;
 }
 
 #image1 {
@@ -122,6 +130,12 @@ nav a:hover {
 
 #image2 {
   background-image: url(..//images/pure.png);
+}
+
+#instaBox {
+  background-color: blue;
+  width: 80%;
+  justify-content: center;
 }
 
 @media screen and (min-width: 800px) {

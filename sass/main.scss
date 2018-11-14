@@ -5,8 +5,16 @@ body{
     font-family:$mainFont;
     display:flex;
     flex-wrap:wrap;
+    display:grid;
+  
 
 }
+main{
+    display:grid;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+ }
 
 //navigation
 
@@ -97,7 +105,7 @@ nav a:hover {
 .portfolioContent{
    // padding:10%;
     flex: 1 1 80%;
-    min-height:200vh;
+    min-height:300vh;
     justify-content: center;
     align-items:center;
 }
@@ -109,23 +117,44 @@ nav a:hover {
 }
 
 .portfolioImage{
-    background: blueviolet;
+    
     display:flex;
     justify-content: center;
     align-items: center;
-    background-blend-mode:screen;
+    background-blend-mode:soft-light;
     background-position:center;
-}
-.portfolioImage:hover {
-    background-blend-mode:initial; //yess
-}
+    background-color:teal;
+   
+    
 
-#image1{
+
+ }
+ .portfolioImage:hover{
+     background-blend-mode: inherit;
+
+ }
+ #image1{
     background-image: url(..//images/pink.jpg);
 
  }
  #image2{
     background-image: url(..//images/pure.png);
+
+ }
+ //InstagramFeed
+
+
+ #instaImage{
+
+
+ }
+
+
+ #instaBox{
+background-color: blue;
+width:80%;
+justify-content: center;
+
 
  }
 
