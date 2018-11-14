@@ -4,13 +4,13 @@
 body{
     font-family:$mainFont;
     display:flex;
-    flex-wrap:wrap;
+   flex-wrap:wrap;
     display:grid;
   
 
 }
-main{
-    display:grid;
+#instaSection{
+   
     grid-template-rows: auto;
     align-items: center;
     justify-items: center;
@@ -114,6 +114,7 @@ nav a:hover {
     display:grid;
     height:100%;
    // grid-gap:10px;
+
 }
 
 .portfolioImage{
@@ -144,16 +145,22 @@ nav a:hover {
  //InstagramFeed
 
 
- #instaImage{
+ .instaImage{
+
+//padding:20px;
+//background-color: #3498db;
+grid-column: 2 / 1;
+grid-row: 2 / 1;
 
 
  }
 
-
  #instaBox{
 background-color: blue;
 width:80%;
-justify-content: center;
+display: grid;
+
+
 
 
  }

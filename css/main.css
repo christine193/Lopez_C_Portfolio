@@ -6,8 +6,7 @@ body {
   display: grid;
 }
 
-main {
-  display: grid;
+#instaSection {
   grid-template-rows: auto;
   align-items: center;
   justify-items: center;
@@ -132,10 +131,15 @@ nav a:hover {
   background-image: url(..//images/pure.png);
 }
 
+.instaImage {
+  grid-column: 2/1;
+  grid-row: 2/1;
+}
+
 #instaBox {
   background-color: blue;
   width: 80%;
-  justify-content: center;
+  display: grid;
 }
 
 @media screen and (min-width: 800px) {
