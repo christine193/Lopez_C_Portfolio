@@ -7,7 +7,7 @@ var feed = new Instafeed({
     userId: "8699890662",
     accessToken:'8699890662.1677ed0.988f17324a344ad8935e86aea0f10a0a',
     resolution:"low_resolution",
-    template: '<a href="{{link}}"><img class="instaImage" src="{{image}}"></a>',
+    template: '<a href="{{link}}"><img src="{{image}}"/><div class="rollover"></div></a>',
  
     onSuccess: function() {
         if(!this.hasNext()) loadMoreButton.disabled = true;

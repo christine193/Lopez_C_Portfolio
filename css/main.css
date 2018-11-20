@@ -5,6 +5,23 @@ body {
   flex-wrap: wrap;
   justify-items: center;
   height: 100%;
+  background-attachment: fixed;
+}
+
+/* width */
+.button {
+  padding: 5px 20px 5px 20px;
+  border: 2px solid black;
+  background: white;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  outline: none;
+}
+
+.button:hover {
+  background: black;
+  color: white;
+  transition: 400ms;
 }
 
 header {
@@ -93,6 +110,20 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
+#videoArea {
+  background-color: teal;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+}
+
+#titleText {
+  justify-content: center;
+  align-items: center;
+  color: white;
+  display: flex;
+}
+
 .portfolioContent {
   flex: 1 1 80%;
   min-height: 300vh;
@@ -126,16 +157,46 @@ nav a:hover {
   background-image: url(..//images/pure.png);
 }
 
-.instaImage {
-  border-radius: 50%;
-  margin: 10px;
+#instaSection {
+  display: grid;
+  min-height: 100vh;
+}
+
+#instaSection .button {
+  margin: 0 auto;
+  display: flex;
+}
+
+#instafeed img {
+  width: 250px;
+}
+
+#instafeed a {
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  margin: 1%;
+}
+
+#instafeed a .rollover {
+  background-color: rgba(0, 0, 0, 0.322);
+  position: absolute;
+  opacity: 1;
+  transition: 400ms;
+  bottom: 2px;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+#instafeed a:hover .rollover {
+  opacity: 0;
 }
 
 #instaSection {
-  flex: 1 1 80%;
-  min-height: 300vh;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  min-height: 100vh;
 }
 
 #instafeed {
@@ -179,15 +240,20 @@ nav a:hover {
   .portfolio {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 7px;
     padding: 5%;
+    margin: 0 7% 0 7%;
   }
 
   .portfolioContent {
     min-height: 100vh;
   }
 
-  .instaImage:hover {
+  #instafeed img:hover {
+    border-radius: inherit;
+  }
+
+  #instafeed a .rollover:hover {
     border-radius: inherit;
     transition: all 0.5s ease-out;
   }
@@ -199,7 +265,6 @@ nav a:hover {
 
   #instaSection {
     margin: 0 5% 0 5%;
-    grid-gap: 10px;
     padding: 5%;
   }
 }
