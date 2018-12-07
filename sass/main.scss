@@ -1,13 +1,19 @@
 @import '_vars';
+@import'_nav';
+@import'button';
+
+
+
 
 //body tags
 body{
     font-family:$mainFont;
-   display:flex;
-   flex-wrap:wrap;
-   //display:grid;
+    display:flex;
+  flex-wrap:wrap;
+ //display:grid;
   justify-items: center;
    height: 100%;
+  background:$mainColor;
 
  
 background-attachment: fixed;
@@ -15,30 +21,26 @@ background-attachment: fixed;
 
 }
 
-/* width */
-//button
-.button{
-    padding: 5px 20px 5px 20px;
-    border: 2px solid black;
-    background:white;
-    text-transform:uppercase;
-    letter-spacing: 0.4em;
-    outline:none;
+.sectionTitles{
+    text-align: center;
+}
+.title{
+   
+    padding-top:5%;
+    color:$mainColor;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
   
 }
-.button:hover{
-    background:black;
-    color:white;
-    transition: 400ms;
-    
+
+.hidden{
+    display:none;
 }
 
 
-//navigation
-
 header{
- 
-    background:white;
+   background-color:$mainColor;
     text-align: center;
     position:fixed;
     width:100%;
@@ -61,7 +63,7 @@ header{
 .navToggleLabel span::before,
 .navToggleLabel span::after {
     display:block;
-    background:black;
+    background:white;
     height:2px;
     width:1.8em;
     border-radius:2px;
@@ -82,8 +84,10 @@ header{
 }
 
 nav{
+   
     position: absolute;
-    background:white;
+   background:$mainColor;
+
     width:100%;
     text-align:center;
     margin-right:1em;
@@ -98,17 +102,19 @@ nav li{
 }
 
 nav a {
-    color:black;
-    text-transform: uppercase;
+    color:white;
+    text-transform:lowercase;
     text-decoration: none;
-    font-size: 0.8 rem;
-    margin-right:1em;
+    letter-spacing: 0.25em;
+    font-size: 1em;
+	font-weight: 500;
+    margin-right:2em;
     opacity:0;
     transition:opacity 200ms ease-in-out;
 }
 
 nav a:hover {
-    color:white;
+    color:$mainColor;
 }
 .navToggle:checked ~ nav {
     display:block;
@@ -120,33 +126,101 @@ nav a:hover {
 
 }
 //index
-#videoArea{
-    background-color: teal;
-    width:100%;
+.sectionArea{ //wow terrible name for index
+
+
+  background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
     display:grid;
-    // flex: 1 1 80%;
-     min-height:100vh;
+    grid-template-rows:repeat(5,20%);
+    grid-template-columns:repeat(5,20%);
+     height:100vh;
+    overflow:hidden;
+    background-attachment: fixed;
+
 }
-#titleText{
-    justify-content: center;
-    align-items:center;
+.promoVid{
+  grid-column: 1 /  6;
+  grid-row:1;
+  margin:0 auto;
+  
+}
+
+#clipPath{
+    clip-path: circle(40% at 50% 50%);
+    opacity: 0.4;
+    margin-top:15%;
+
+   
+
+}
+#shadow{
+    filter: drop-shadow(0px 30px 20px rgba(0,0,0,0.6));
+} 
+
+#vidThumb{
+width:100%;
+}
+
+
+.hiddenMobile {
+	display: none;
+}
+.titleTextSub{
+    font-size:40%;
+}
+
+
+#button2{
+   
+    grid-column:3;
+    grid-row:4;
+ 
+}
+
+
+
+
+
+.titleText{
+   
+    grid-row:2;
+    grid-column: 1 / span 5;
+    font-size:2em;
+    z-index:10;
     color:white;
-    display:flex;
+    text-align: center;
+ 
 }
+.titleDesc{
+    margin-top:1.5em;
+    margin-bottom:1.5em;
+}
+
 
 //portfolio section
 .portfolioContent{
-   // padding:10%;
+  
     flex: 1 1 80%;
-    min-height:300vh;
+    min-height:120vh;
     justify-content: center;
+    justify-items: center;
     align-items:center;
+    background: #efefef;
+    padding:0 2em 0 2em,
+ 
 }
 
 .portfolio{
-    display:grid;
-    height:100%;
-   // grid-gap:10px;
+   display:grid;
+    height:60%;
+    a{
+  
+  //   background:red;
+     text-decoration: none;
+
+    }
+
+
 
 }
 
@@ -157,51 +231,167 @@ nav a:hover {
     align-items: center;
     background-blend-mode:soft-light;
     background-position:center;
-    background-color:teal;
+    background-color:$mainColor;
+
+  
+}
+.portTitle{
+    color:white;
+    font-size: 2em;
+    letter-spacing: 0.12em;
+    //text-transform: lowercase;
 
 }
- .portfolioImage:hover{
+ .portfolioImage:hover {
      background-blend-mode: inherit;
+    
+     .portTitle{
+         opacity: 0;
+     }
+     .portSub{
+         opacity: 0;
+     }
+
  }
+ .portSub{
+     color:white;
+     position: absolute;
+     margin-top:5em;
+ }
+
+
  #image1{
     background-image: url(..//images/pink.jpg);
-
+ 
  }
+
  #image2{
     background-image: url(..//images/pure.png);
+.portTitle{
+    margin-left:0.7em;
+}
+ }
+ //portfolio Glitch page
+ .subPortText{
 
  }
+
+ .glitchContent{
+
+    flex: 1 1 80%;
+     min-height:200vh;
+     justify-content: center;
+     align-items:center;
+     //background-color:red;
+     p{
+    
+         padding:10%;
+         text-align: center;
+     }
+ }
+ 
+ .glitch1 {
+    display:grid;
+    // height:100%;
+    grid-gap:10px;
+    margin-bottom:10%;
+
+   
+
+ }
+ 
+ .glitchImage{
+     
+     display:flex;
+     justify-content: center;
+  //  align-items: center;
+   //  background-blend-mode:soft-light;
+   //  background-position:cover;
+    // background-color:teal;
+
+  
+ }
+//about meeee section
+#aboutSection{
+margin:0 auto;
+    background-color:$mainColor;
+  //  justify-content: center;
+  // align-items:center;
+    height:100vh;
+    
+ 
+ 
+}
+
+#aboutSection{
+   // display:grid;
+    h2{
+        color:white;
+    }
+  
+}
+
+
+
+.aboutBox{
+  
+    background-color:white;
+    margin-bottom:2em;
+    margin:0 auto;
+   // height:50em;
+ 
+
+}
+
+
 
  //InstagramFeed
- #instaSection{
-     display:grid;
-     min-height:100vh;
- }
-
- #instaSection .button{
-margin: 0 auto;
- display:flex;
- }
-
-#instafeed img{
-    //border-radius:50%; circle transition prolly too much
-    width:250px;
+ .purpleButton{
+    background-color: $mainColor;
+    color:white;
+    border-radius:5px;
+    border:none;
+    letter-spacing: 0.25em;
+    font-size:0.5;
+    min-width:120px;
+    height:45px;
+   
 }
+ .instaSection{
+
+    background-color: #efefef;
+     min-height:100vh;
+     margin: 0 auto;
+     display:flex;
+     width:100%;
+    // background:red;
+ }
+
+  .purpleButton{
+    margin-bottom:5%;
+    margin:0 auto;
+
+   
+}
+#buttonWrapper{
+    display:flex;
+width:100%;
+//background:red;
+height:5em;
+}
+
 #instafeed a{
-    margin:0;
+    margin:2em;
     box-sizing: border-box;
     position:relative;
     display: inline-block;
-    margin:1%;
+
 
 }
 #instafeed a .rollover {
-    background-color:rgba(0, 0, 0, 0.322);
-   // border-radius:50%; circle transition
+    background-color:rgba(0, 0, 0, 0.637);
     position:absolute;
-  // padding: 20px 25px;
-   //width:100%;
-    opacity:1;
+    opacity:0;
     transition: 400ms;
     bottom: 2px; //somethings up with the grid probably
     right: 0;
@@ -210,29 +400,119 @@ margin: 0 auto;
    
   }
   #instafeed a:hover .rollover{
-      opacity:0;
+      opacity:1;
   }
- #instaSection{
-     display:grid;
-   // flex: 1 1 80%;
-    min-height:100vh;
-    //justify-content: center;
-   // align-items:center;
- 
-
-
- }
 
  #instafeed{
-margin-top:30px;
+     
 justify-content: center;
 margin:0 auto;
 text-align:center;
+
+}
+
+
+
+ .caption{
+     color:white;
+     text-align: center;
+     margin:1.2em;
  }
+ //contact form
+ .contactForm{
+     color:white;
+     display:grid;
+     grid-template-columns: 1fr 2fr 1fr;
+     grid-template-rows: 1fr auto 1fr;
+     width:100%;
+     .title{
+         color:white;
+        grid-column:2;
+        justify-self: center;
+     }
+ }
+.formContainer {
+   // max-width:1170px;
+    padding:1em;
+    margin-left:auto;
+    margin-right:auto;
+    grid-row:2;
+    grid-column:2;
+   
+}
+.formWrapper{
+ 
+ //border:1px solid white;
+*{
+    padding:0.7em;
+}
+
+}
+//form styles
+.contactForm{
+    background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
+    .mainButton{
+        height:100%;
+    }
+}
+.contact{ 
+    form {
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    align-self: auto;
+    align-self: center;
+}
+label{
+    display:block;
+}
+p{
+    margin:0;
+}
+}
+.nameArea{
+    grid-column: 1/4
+}
+
+.emailArea{
+    grid-row:2;
+    grid-column: 1/4
+}
+
+
+.contact form {
+.full{
+    grid-column: 1/4;
+}
+
+ input, textarea{
+     width:100%;
+     border:1px solid white;
+ }
+
+}
+
 
 //media queries 
 
+@media screen and (min-width:600px){
+    .titleText{
+        font-size:4em;
+    }.sectionArea{
+       //height:initial;
+    }
+    .sectionArea{
+        height: 550px;
+       }
+}
+
+
 @media screen and (min-width:800px){
+
+   
+    main{
+     // display:grid;
+
+    }
     //scrollbar
 
     //navigation
@@ -242,15 +522,17 @@ text-align:center;
     header{
         display:grid;
         grid-template-columns:1fr auto minmax(600px,3fr) 1fr;
+   
     }
     .logo{
         grid-column: 2 / span 1;
     }
     nav{
         all:unset;
-        grid-column: 3 / 4;
+        grid-column:3;
         display:flex;
-        justify-content: flex-end;
+       justify-content: flex-end;
+       //justify-content: center;
         margin-top:1em;
     }
     nav ul{
@@ -258,25 +540,119 @@ text-align:center;
         justify-content: flex-end;
     }
     nav a{
+       
         opacity:1;
     }
-    .portfolio{ //portfolioo
-      
-       grid-template-columns:repeat(3, 1fr);
-       grid-template-rows:repeat(2,1fr);
-       grid-gap:7px;
-       padding: 5%;
-       margin:0 7% 0 7%;
+    .sectionArea{
+        height: 650px;
+       }
+    //index
+   #clipPath{
+   //margin-top:0;
+   clip-path: circle(34% at 50% 50%); // can change size here to properly sized videoo
+       
     
     }
-    .portfolioContent{
-        min-height:100vh;
+
+    .mainButton{
+        grid-row:4;
+        max-width:150px;
     }
 
+    .titleText{
+        font-size:5em;
+  
+       
+    }
+
+
+    
+    #vidThumb{
+		display: none;
+    }
+    .hiddenMobile{
+        display:block;
+        width:100%;
+       // width:80%;
+    
+    }
+    .portfolio{ //portfolioo
+    grid-template-columns:repeat(2, 1fr);
+    margin-top:1em;
+     padding: 5%;
+     grid-gap:.5em;
+     justify-content: center;
+     }
+
+ 
+    .portfolioContent{
+  //  min-height:100vh;
+    margin: 0 auto;
+    grid-row:1/3;
+
+    }
+ 
+ 
+    //portfolio Glitch page
+.glitch1{
+       // padding: 5%;
+       grid-template-columns:repeat(2, 2fr);
+       grid-row-gap:5%;
+
+      // grid-template-rows:repeat(2,1fr);
+     //  justify-items: center;
+    //
+    }
+    .glitchContent{
+        min-height:100vh;
+        margin:0 10% 0 10%;
+       p{
+           margin:0 auto;
+           margin-top:4em;
+           
+    }
+
+  //Apropos moi
+  #aboutSection{
+
+
+ }
+  }
+  #aboutBox{
+     // grid-column:1;
+     background-color: red;
+  }
+
+   #aboutContent{
+    display:grid;
+    grid-gap:2em;
+    grid-template-rows:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
+
+   }
+
+
+
+   .aboutBox{
+   // grid-template-rows:repeat(2,1fr);
+    //margin: 5%;
+   // height:50em;
+  //  margin:0 auto;
+   // align-self: center;
+    //justify-content: center;
+    width:20em;
+  
+   }
+
     //instagram
+    #instaSection { 
+  
+        //margin:0 5% 0 5%;
+        
+        }
 
         
-  
+
     #instafeed img:hover{
         border-radius:inherit; //add class back to js to get this to work
     }
@@ -284,17 +660,39 @@ text-align:center;
         border-radius:inherit;
         transition:all 0.5s ease-out;
     }
-  #instaFeed{
-    grid-template-columns:repeat(3, 2fr);
-    grid-template-rows:repeat(2,1fr);
-    //flex: 1 1 80%;
-  }
-    #instaSection { 
-   // grid-template-columns:repeat(3, 2fr);
-   // grid-template-rows:repeat(2,1fr);
- margin:0 5% 0 5%;
-
-    padding: 5%;
-
+    .contact{
+        width:500px;
     }
+  #instaFeed{
+   
+  //  flex: 1 1 80%;
+  }
+   
+    @media screen and (min-width:1000px){
+        .titleText{
+            font-size: 7em;
+            grid-row:2;
+    
+           // margin-left:3em;
+        }
+        .sectionArea{
+         }
+        .mainButton{
+            grid-row:4;
+           // margin-top:20%;
+        }
+      
+        .glitch1{
+            grid-template-columns:repeat(4, 1fr);
+        }
+        .portfolio{ //xportfolioo
+           grid-template-columns:repeat(4, 1fr);
+      
+                  }
+                  #image2 .portTitle{
+                    // margin:0;
+                 }
+   
+}
+
 }

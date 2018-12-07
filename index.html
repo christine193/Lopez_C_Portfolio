@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Insta</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.1/lottie.js"></script>
+    <title>Christine Lopez</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
 <header>
-  <h1 class="logo">Logo</h1>
+  <h1 class="logo">Christine</h1>
   <input type="checkbox" id="navToggle" class="navToggle">
   <nav> 
   <ul>
-    <li><a href="work.html">Work</a></li>
+    <li><a href="#">Work</a></li>
     <li><a href="#">About</a></li>
-    <li><a href="insta.html">Insta</a></li>
+    <li><a href="#">Insta</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
 </nav>
@@ -26,18 +28,125 @@
   </label>
 </header>
 
+<section class="sectionArea"><!--start of index-->
+    <div class="titleText">
+        <h1 id="name">Christine</h1>
+        <h3 class="titleTextSub">Front-End Development & Design</h3>
+    </div>
+		<div class="promoVid">
+        <h2 class="hidden">Promotional Video</h2>
+        <div id="shadow">
+        
+        <div id="clipPath">
+       
+            <video src="video/real_large.mp4" autoplay loop muted class="promoVid hiddenMobile cut"></video>
+            <img src="images/pink.jpg" alt="promo video" id="vidThumb" class="cut">
+       </div>
+       
+        </div>
+        </div>
+    </div><!--END OF promoVid-->
 
-<main id="videoArea">
-    <div id="titleText">
-    <h1>Christine</h1>
-    <div>
+    <button id="button2" class="mainButton">play reel</button>
+</section> <!--end of index-->
 
 
+<div class="portfolioContent">
+  <div class="sectionTitles">
+    <h2 class="title">Portfolio</h2>
+    <h3 class="titleDesc">Checkout some of my work</h3>
+  </div>
+  <div class="portfolio">
+  <a href="glitch.html">
+  <div class="portfolioImage" id="image1">
+      <h2 class="portTitle">Glitch</h2>
+      <h3 class="portSub">Illustration | Pixel Sorting</h3>
+      </div>
+    </a>  
+    <div class="portfolioImage" id="image2">
+    <h2 class="portTitle">Pure Volume</h2>
+    <h3 class="portSub">Motion Design</h3>
+    </div>
+    <div class="portfolioImage" id=image3>
+      <h2 class="portTitle">Thales</h2>
+      <h3 class="portSub">Motion Design | Branding</h3>
+    </div>
+    <div class="portfolioImage" id="image4">
+      <h2 class="portTitle">Av App</h2>
+      <h3 class="portSub"> Design</h3>
+</div>
 
-</main>
+ 
+  </div>
+</div><!--end of portfolio content--> 
+
+  <section id="aboutSection"><!--start of about section-->
+  <h2 class="title">About Me</h2>
+  <div id="aboutContent">
+     <div id="about1" class="aboutBox">
+        <p>some text for now</p>
+       <p>some text for now</p>
+     </div>
+     <div id="about2" class="aboutBox">
+      <p>some text for now</p>
+     </div>
+     <div id="about3" class="aboutBox">
+      <p>some text for now</p>
+     </div>
+  </div>
+  </section>
+  
+
+  </section><!--end of about section-->
+
+  <section class="instaSection"><!--start of insta feed-->
+    <div id="instaBox">
+      <div id="instafeed" class="inner"></div> <!--instagram feed pipes in-->
+      <div id="buttonWrapper">
+      <button id="loadMoreButton" class="purpleButton">load More</button>
+      </div>
+    </div>
+
+  </section><!--end of insta feed-->
+ 
+<section class="contactForm">
+<h2 class="title">Contact Me</h2>
+  <div class="formContainer">
+    <div class="formWrapper">
+      <div class="contact">
+         <form>
+           <p class="nameArea">
+             <label>name :</label>
+              <input type="text" name="name">
+           </p>
+           <p class="emailArea">
+              <label>email :</label>
+               <input type="email" name="email">
+            </p>
+            <p>
+            
+              <p class="full">
+                  <label>message :</label>
+                   <textarea name="message" rows="5"></textarea>
+                </p>
+               
+                <p>
+                  <button class="mainButton">sumbit</button>
+                </p>
+         </form>
+      </div>
+    </div>
+  </div>
+   
+</section>
+
+
+</div>
+
    
 </body>
 <script src="js/instafeed.min.js"></script>
+<script src="js/lottie.js"></script>
 <script src="js/main.js"></script>
 
 
