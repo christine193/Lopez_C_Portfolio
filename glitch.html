@@ -9,6 +9,7 @@
     <title>Glitch</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lightbox.css">
 </head>
 <body>
 <header>
@@ -16,10 +17,10 @@
   <input type="checkbox" id="navToggle" class="navToggle">
   <nav> 
   <ul>
-    <li><a href="work.html">work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="insta.html">Insta</a></li>
-    <li><a href="#">Contact</a></li>
+  <li><a href="index.html#portfolioSection">Portfolio</a></li>
+  <li><a href="index.html#aboutSection">About</a></li>
+  <li><a href="index.html#instaSection">Insta</a></li>
+  <li><a href="index.html#contactSection">Contact</a></li>
   </ul>
 </nav>
 <label for="navToggle" class="navToggleLabel">
@@ -30,11 +31,16 @@
 <main class="glitchContent" id="app">
   <p class="subPortText">A collection of my illustrations destructed with Processing 3.4</p>
   <!--spacegirl-->
+ 
   <div class="glitch1" id="collection1">
-    <div class="glitchImage">
-        <img src="" class="glitchImg1">
-     </div>
-    <div class="glitchImage">
+
+      <a href="" class="largeImage glitchGallery">
+           <div class="glitchImage"  v-on:click="setHref(1)">
+            <img src="" class="glitchImg1">
+            </div>
+      </a>
+
+    <div class="glitchImage"  v-on:click="setHref(2)">
         <img src="" class="glitchImg2">
     </div>
     <div class="glitchImage">
@@ -82,7 +88,7 @@
    
 </body>
 <script src="js/main.js"></script>
-
+<script src="js/lightbox.js"></script>
 
 
 </html>

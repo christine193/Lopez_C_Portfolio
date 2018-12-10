@@ -1,24 +1,33 @@
 @import '_vars';
 @import'_nav';
-@import'button';
-
+@import'_videoPlayer';
+@import'_button';
+@import'_animation';
+@import'_form';
 
 
 
 //body tags
 body{
     font-family:$mainFont;
-    display:flex;
-  flex-wrap:wrap;
- //display:grid;
-  justify-items: center;
+     display:flex;
+   flex-wrap:wrap;
+   justify-items: center;
    height: 100%;
-  background:$mainColor;
+   background:$mainColor;
+   background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
 
- 
+ margin:0 auto;
 background-attachment: fixed;
   
+}
+html {
+    scroll-behavior: smooth;
 
+}
+
+a{
+    text-decoration: none;
 }
 
 .sectionTitles{
@@ -29,7 +38,7 @@ background-attachment: fixed;
     padding-top:5%;
     color:$mainColor;
     font-size: 3em;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   
 }
@@ -114,7 +123,7 @@ nav a {
 }
 
 nav a:hover {
-    color:$mainColor;
+    color:$secoundaryColor;
 }
 .navToggle:checked ~ nav {
     display:block;
@@ -125,37 +134,42 @@ nav a:hover {
     transition:opacity 250ms ease-in-out 250ms;
 
 }
+
+#heroArea{
+
+
+   margin:0 auto;
+}
 //index
-.sectionArea{ //wow terrible name for index
+.sectionArea{ //content on hero image
 
-
-  background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
-    display:grid;
-    grid-template-rows:repeat(5,20%);
-    grid-template-columns:repeat(5,20%);
+   display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
      height:100vh;
     overflow:hidden;
-    background-attachment: fixed;
+     margin:0 auto;
+     position:relative;
+   //  background:pink;
 
 }
-.promoVid{
-  grid-column: 1 /  6;
-  grid-row:1;
-  margin:0 auto;
-  
+#animationArea{
+    height:100%;
+//  background-color:red;
+  position:absolute;
+  width:100%;
+  opacity:0.2;
 }
 
-#clipPath{
-    clip-path: circle(40% at 50% 50%);
-    opacity: 0.4;
-    margin-top:15%;
-
-   
+.heroBkg{
+//background:blue;
+-webkit-clip-path: circle(50% at 50% 50%);
+clip-path: circle(45% at 50% 50%);
 
 }
-#shadow{
-    filter: drop-shadow(0px 30px 20px rgba(0,0,0,0.6));
-} 
+.heroVid{
+    margin:0 auto;
+}
 
 #vidThumb{
 width:100%;
@@ -185,15 +199,18 @@ width:100%;
    
     grid-row:2;
     grid-column: 1 / span 5;
-    font-size:2em;
+    font-size:4em;
     z-index:10;
+  //  padding:0.50em;
     color:white;
     text-align: center;
+ 
  
 }
 .titleDesc{
     margin-top:1.5em;
     margin-bottom:1.5em;
+    text-align: center;
 }
 
 
@@ -201,34 +218,29 @@ width:100%;
 .portfolioContent{
   
     flex: 1 1 80%;
-    min-height:120vh;
     justify-content: center;
-    justify-items: center;
-    align-items:center;
+     align-items:center;
     background: #efefef;
-    padding:0 2em 0 2em,
- 
+    padding:0 1em 1em 1em;
+    margin:0 auto;
+   
 }
 
 .portfolio{
    display:grid;
     height:60%;
     a{
-  
-  //   background:red;
      text-decoration: none;
 
     }
 
-
-
 }
 
 .portfolioImage{
-    
+    height:15em;
     display:flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; //aligning letters
     background-blend-mode:soft-light;
     background-position:center;
     background-color:$mainColor;
@@ -239,7 +251,7 @@ width:100%;
     color:white;
     font-size: 2em;
     letter-spacing: 0.12em;
-    //text-transform: lowercase;
+
 
 }
  .portfolioImage:hover {
@@ -266,11 +278,22 @@ width:100%;
  }
 
  #image2{
-    background-image: url(..//images/pure.png);
+    background-image: url(..//images/volume.JPG);
 .portTitle{
     margin-left:0.7em;
 }
  }
+ #image3{
+    background-image: url(..//images/thales.JPG);
+ 
+ }
+ #image4{
+    background-image: url(..//images/drawing.jpg);
+   // background-position-x: -15em;
+ 
+ }
+
+
  //portfolio Glitch page
  .subPortText{
 
@@ -279,20 +302,19 @@ width:100%;
  .glitchContent{
 
     flex: 1 1 80%;
-     min-height:200vh;
+    // min-height:200vh;
      justify-content: center;
      align-items:center;
-     //background-color:red;
+    background-color:#efefef;
      p{
     
-         padding:10%;
+         padding:4em 1em 5em 1em;
          text-align: center;
      }
  }
  
  .glitch1 {
     display:grid;
-    // height:100%;
     grid-gap:10px;
     margin-bottom:10%;
 
@@ -304,33 +326,30 @@ width:100%;
      
      display:flex;
      justify-content: center;
-  //  align-items: center;
-   //  background-blend-mode:soft-light;
-   //  background-position:cover;
-    // background-color:teal;
 
   
  }
 //about meeee section
 #aboutSection{
-margin:0 auto;
-    background-color:$mainColor;
-  //  justify-content: center;
-  // align-items:center;
-    height:100vh;
-    
- 
- 
-}
+    margin:0 auto;
+    }
 
 #aboutSection{
-   // display:grid;
+   display:grid;
+   margin-bottom:2em;
     h2{
         color:white;
     }
   
 }
 
+#aboutTitle{
+    text-align: center;
+}
+#aboutContent{
+    margin: 0em 1em 1em 1em;
+   
+}
 
 
 .aboutBox{
@@ -338,25 +357,19 @@ margin:0 auto;
     background-color:white;
     margin-bottom:2em;
     margin:0 auto;
-   // height:50em;
- 
-
+    padding:1em;
+   height:20em;
+   p{
+    padding:15%;
 }
 
-
+}
+.aboutText{
+   padding:5%;
+}
 
  //InstagramFeed
- .purpleButton{
-    background-color: $mainColor;
-    color:white;
-    border-radius:5px;
-    border:none;
-    letter-spacing: 0.25em;
-    font-size:0.5;
-    min-width:120px;
-    height:45px;
-   
-}
+
  .instaSection{
 
     background-color: #efefef;
@@ -365,6 +378,11 @@ margin:0 auto;
      display:flex;
      width:100%;
     // background:red;
+  
+ }
+
+ #instaTitle{
+     text-align: center;
  }
 
   .purpleButton{
@@ -381,7 +399,7 @@ height:5em;
 }
 
 #instafeed a{
-    margin:2em;
+    margin:0.5em;
     box-sizing: border-box;
     position:relative;
     display: inline-block;
@@ -419,84 +437,13 @@ text-align:center;
      margin:1.2em;
  }
  //contact form
- .contactForm{
-     color:white;
-     display:grid;
-     grid-template-columns: 1fr 2fr 1fr;
-     grid-template-rows: 1fr auto 1fr;
-     width:100%;
-     .title{
-         color:white;
-        grid-column:2;
-        justify-self: center;
-     }
- }
-.formContainer {
-   // max-width:1170px;
-    padding:1em;
-    margin-left:auto;
-    margin-right:auto;
-    grid-row:2;
-    grid-column:2;
-   
-}
-.formWrapper{
  
- //border:1px solid white;
-*{
-    padding:0.7em;
-}
-
-}
-//form styles
-.contactForm{
-    background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
-    .mainButton{
-        height:100%;
-    }
-}
-.contact{ 
-    form {
-    display:grid;
-    grid-template-columns:1fr 2fr 1fr;
-    align-self: auto;
-    align-self: center;
-}
-label{
-    display:block;
-}
-p{
-    margin:0;
-}
-}
-.nameArea{
-    grid-column: 1/4
-}
-
-.emailArea{
-    grid-row:2;
-    grid-column: 1/4
-}
-
-
-.contact form {
-.full{
-    grid-column: 1/4;
-}
-
- input, textarea{
-     width:100%;
-     border:1px solid white;
- }
-
-}
-
 
 //media queries 
 
 @media screen and (min-width:600px){
     .titleText{
-        font-size:4em;
+ //    font-size:4em;
     }.sectionArea{
        //height:initial;
     }
@@ -547,20 +494,16 @@ p{
         height: 650px;
        }
     //index
-   #clipPath{
-   //margin-top:0;
-   clip-path: circle(34% at 50% 50%); // can change size here to properly sized videoo
-       
-    
-    }
+
 
     .mainButton{
         grid-row:4;
         max-width:150px;
+     
     }
 
     .titleText{
-        font-size:5em;
+       // font-size:5em;
   
        
     }
@@ -582,6 +525,7 @@ p{
      padding: 5%;
      grid-gap:.5em;
      justify-content: center;
+    
      }
 
  
@@ -591,7 +535,13 @@ p{
     grid-row:1/3;
 
     }
- 
+.portfolioImage{
+        height:20em;
+    }
+
+ #image4{
+     background-position-x: -20em;
+ }
  
     //portfolio Glitch page
 .glitch1{
@@ -605,7 +555,8 @@ p{
     }
     .glitchContent{
         min-height:100vh;
-        margin:0 10% 0 10%;
+       margin:0 10% 0 10%;
+       padding:5%;
        p{
            margin:0 auto;
            margin-top:4em;
@@ -615,18 +566,22 @@ p{
   //Apropos moi
   #aboutSection{
 
+      h2{
+          text-align: center;
+    
+      }
+
 
  }
   }
-  #aboutBox{
-     // grid-column:1;
-     background-color: red;
-  }
+
 
    #aboutContent{
+    padding:0 4% 0 4%;
+
     display:grid;
     grid-gap:2em;
-    grid-template-rows:1fr 1fr 1fr;
+   // grid-template-rows:1fr 1fr 1fr;
     grid-template-columns:1fr 1fr 1fr;
 
    }
@@ -634,20 +589,18 @@ p{
 
 
    .aboutBox{
-   // grid-template-rows:repeat(2,1fr);
-    //margin: 5%;
-   // height:50em;
-  //  margin:0 auto;
-   // align-self: center;
-    //justify-content: center;
-    width:20em;
-  
+    width:80%;
+
+  p{
+      font-size:0.9em;
+      padding:0;
+  }
    }
 
     //instagram
     #instaSection { 
   
-        //margin:0 5% 0 5%;
+        padding:0 5% 0 5%;
         
         }
 
@@ -692,6 +645,9 @@ p{
                   #image2 .portTitle{
                     // margin:0;
                  }
+                 .portfolioImage{
+                    height:30em;
+                }
    
 }
 

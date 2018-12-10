@@ -13,14 +13,16 @@
 </head>
 <body>
 <header>
-  <h1 class="logo">Christine</h1>
+  <div class="logo">
+    <img src="./images/logoWhite.svg" height="45em">
+  </div>
   <input type="checkbox" id="navToggle" class="navToggle">
   <nav> 
   <ul>
-    <li><a href="#">Work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Insta</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#portfolioSection">Portfolio</a></li>
+    <li><a href="#aboutSection">About</a></li>
+    <li><a href="#instaSection">Insta</a></li>
+    <li><a href="#contactSection">Contact</a></li>
   </ul>
 </nav>
 <label for="navToggle" class="navToggleLabel">
@@ -28,41 +30,42 @@
   </label>
 </header>
 
-<section class="sectionArea"><!--start of index-->
-    <div class="titleText">
-        <h1 id="name">Christine</h1>
-        <h3 class="titleTextSub">Front-End Development & Design</h3>
-    </div>
-		<div class="promoVid">
-        <h2 class="hidden">Promotional Video</h2>
-        <div id="shadow">
-        
-        <div id="clipPath">
-       
-            <video src="video/real_large.mp4" autoplay loop muted class="promoVid hiddenMobile cut"></video>
-            <img src="images/pink.jpg" alt="promo video" id="vidThumb" class="cut">
-       </div>
-       
+<section id="heroArea"><!--start of hero image-->
+    
+   <div class="sectionArea"><!--content-->
+       <div class="titleText">
+            <h1 id="name">Christine</h1>
+            <h3 class="titleTextSub">Art & Interactive Media</h3>
+      
         </div>
-        </div>
-    </div><!--END OF promoVid-->
+      
 
-    <button id="button2" class="mainButton">play reel</button>
-</section> <!--end of index-->
+    
+    <a id="button2" class="mainButton" href="reel.html">play reel</a>
 
+    <div id="animationArea">
+        <div class="blob"></div>
+      </div>
+  
+   </div> <!--end of content on page-->
 
-<div class="portfolioContent">
+ </section
+ ><!--end of hero section-->
+
+<section class="portfolioContent" id="portfolioSection">
   <div class="sectionTitles">
     <h2 class="title">Portfolio</h2>
     <h3 class="titleDesc">Checkout some of my work</h3>
   </div>
   <div class="portfolio">
-  <a href="glitch.html">
+ <a href="glitch.html">
+
   <div class="portfolioImage" id="image1">
       <h2 class="portTitle">Glitch</h2>
       <h3 class="portSub">Illustration | Pixel Sorting</h3>
       </div>
-    </a>  
+     
+   </a>
     <div class="portfolioImage" id="image2">
     <h2 class="portTitle">Pure Volume</h2>
     <h3 class="portSub">Motion Design</h3>
@@ -72,54 +75,72 @@
       <h3 class="portSub">Motion Design | Branding</h3>
     </div>
     <div class="portfolioImage" id="image4">
-      <h2 class="portTitle">Av App</h2>
-      <h3 class="portSub"> Design</h3>
+      <h2 class="portTitle">Illustation</h2>
+      <h3 class="portSub"> Drawing | Painting</h3>
 </div>
 
  
   </div>
-</div><!--end of portfolio content--> 
+</section>
+<!--end of portfolio content--> 
 
   <section id="aboutSection"><!--start of about section-->
-  <h2 class="title">About Me</h2>
+  <h2 class="title" id="aboutTitle">About Me</h2>
+  <h3 class="titleDesc">I enjoy making things</h3>
   <div id="aboutContent">
-     <div id="about1" class="aboutBox">
-        <p>some text for now</p>
-       <p>some text for now</p>
+
+     <div class="aboutBox">
+       <div class="animationArea2" id="about1">
+            <div class="aboutAnimate"></div>
+        </div>
+        <p class="aboutText"></p>
      </div>
+
      <div id="about2" class="aboutBox">
-      <p>some text for now</p>
+        <div class="animationArea3">
+            <div class="aboutAnimate"></div>
+        </div>
+      <p></p>
      </div>
+
      <div id="about3" class="aboutBox">
-      <p>some text for now</p>
+        <div class="animationArea4">
+            <div class="aboutAnimate"></div>
+        </div>
+      <p</p>
      </div>
+
   </div>
   </section>
-  
+  <!--end of about section-->
 
-  </section><!--end of about section-->
-
-  <section class="instaSection"><!--start of insta feed-->
+  <section class="instaSection" id="instaSection"><!--start of insta feed-->
     <div id="instaBox">
+        <div id="instaTitle">
+         <h2 class="title" id="instaTitle">Instagram Feed</h2>
+        <h3>Current work in progress and experiements</h3>
+        </div>
       <div id="instafeed" class="inner"></div> <!--instagram feed pipes in-->
       <div id="buttonWrapper">
       <button id="loadMoreButton" class="purpleButton">load More</button>
       </div>
     </div>
 
-  </section><!--end of insta feed-->
+  </section>
+  <!--end of insta feed-->
  
-<section class="contactForm">
+<section class="contactForm" id="contactSection">
 <h2 class="title">Contact Me</h2>
   <div class="formContainer">
     <div class="formWrapper">
       <div class="contact">
          <form>
+          
            <p class="nameArea">
              <label>name :</label>
               <input type="text" name="name">
-           </p>
-           <p class="emailArea">
+           </p> 
+            <p class="emailArea">
               <label>email :</label>
                <input type="email" name="email">
             </p>
@@ -139,14 +160,16 @@
   </div>
    
 </section>
-
+<!--end of contact form-->
 
 </div>
 
    
 </body>
-<script src="js/instafeed.min.js"></script>
+
+<script src="js/animation.js"></script>
 <script src="js/lottie.js"></script>
+<script src="js/instafeed.min.js"></script>
 <script src="js/main.js"></script>
 
 
