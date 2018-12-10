@@ -1,0 +1,48 @@
+@import '_vars';
+
+.mainButton{
+    background-color:transparent;
+    border: 3px solid white;
+    color:white;
+    letter-spacing: 0.25em;
+    font-size:0.5;
+    border-radius:5px;
+    justify-self: center;
+    z-index:200;
+    cursor: pointer;
+    height:60px;
+
+   // padding:0.2em;
+   text-transform:uppercase;
+   width:120px;
+   transition: 500ms;
+ }
+
+ #button2{
+
+ }
+
+ .mainButton:hover{
+   background:#7b83e8;
+   border:none;
+
+ }
+
+ .purpleButton{
+  background-color: $mainColor;
+  color:white;
+  border-radius:5px;
+  border:none;
+  letter-spacing: 0.25em;
+  font-size:0.5;
+  min-width:120px;
+  height:60px;
+ transition: 500ms;
+ 
+}
+
+.purpleButton:hover{
+  background-color: transparent;
+  color:#b1b6f3;
+  border: 3px solid #b1b6f3;;
+}

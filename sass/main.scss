@@ -1,0 +1,654 @@
+@import '_vars';
+@import'_nav';
+@import'_videoPlayer';
+@import'_button';
+@import'_animation';
+@import'_form';
+
+
+
+//body tags
+body{
+    font-family:$mainFont;
+     display:flex;
+   flex-wrap:wrap;
+   justify-items: center;
+   height: 100%;
+   background:$mainColor;
+   background-image: linear-gradient(to top, #7b83e8, #8990eb, #969cee, #a4a9f1, #b1b6f3);
+
+ margin:0 auto;
+background-attachment: fixed;
+  
+}
+html {
+    scroll-behavior: smooth;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.sectionTitles{
+    text-align: center;
+}
+.title{
+   
+    padding-top:5%;
+    color:$mainColor;
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  
+}
+
+.hidden{
+    display:none;
+}
+
+
+header{
+   background-color:$mainColor;
+    text-align: center;
+    position:fixed;
+    width:100%;
+    height:3em;
+    z-index:500;
+}
+.navToggle {
+    display:none;
+}
+.navToggleLabel{
+
+ display:flex;
+ align-items: center;
+ float:right;
+ padding:1em;
+ margin-top:-1em; //prolly not the right thing to do here
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    display:block;
+    background:white;
+    height:2px;
+    width:1.8em;
+    border-radius:2px;
+    position:relative;
+
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    content:'';
+    position: absolute;
+}
+.navToggleLabel span::before{
+    bottom:7px;
+}
+.navToggleLabel span::after{ //bottom looks janky not sure why
+    top: 7px;
+}
+
+nav{
+   
+    position: absolute;
+   background:$mainColor;
+
+    width:100%;
+    text-align:center;
+    margin-right:1em;
+    top: 100%;
+    transform: scale(1,0); //nav scroll down animation
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav li{
+   margin:0 0 1em 1em;
+}
+
+nav a {
+    color:white;
+    text-transform:lowercase;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    font-size: 1em;
+	font-weight: 500;
+    margin-right:2em;
+    opacity:0;
+    transition:opacity 200ms ease-in-out;
+}
+
+nav a:hover {
+    color:$secoundaryColor;
+}
+.navToggle:checked ~ nav {
+    display:block;
+    transform: scale(1,1);
+}
+.navToggle:checked ~ nav a {
+    opacity:1;
+    transition:opacity 250ms ease-in-out 250ms;
+
+}
+
+#heroArea{
+
+
+   margin:0 auto;
+}
+//index
+.sectionArea{ //content on hero image
+
+   display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     height:100vh;
+    overflow:hidden;
+     margin:0 auto;
+     position:relative;
+   //  background:pink;
+
+}
+#animationArea{
+    height:100%;
+//  background-color:red;
+  position:absolute;
+  width:100%;
+  opacity:0.2;
+}
+
+.heroBkg{
+//background:blue;
+-webkit-clip-path: circle(50% at 50% 50%);
+clip-path: circle(45% at 50% 50%);
+
+}
+.heroVid{
+    margin:0 auto;
+}
+
+#vidThumb{
+width:100%;
+}
+
+
+.hiddenMobile {
+	display: none;
+}
+.titleTextSub{
+    font-size:40%;
+}
+
+
+#button2{
+   
+    grid-column:3;
+    grid-row:4;
+ 
+}
+
+
+
+
+
+.titleText{
+   
+    grid-row:2;
+    grid-column: 1 / span 5;
+    font-size:4em;
+    z-index:10;
+  //  padding:0.50em;
+    color:white;
+    text-align: center;
+ 
+ 
+}
+.titleDesc{
+    margin-top:1.5em;
+    margin-bottom:1.5em;
+    text-align: center;
+}
+
+
+//portfolio section
+.portfolioContent{
+  
+    flex: 1 1 80%;
+    justify-content: center;
+     align-items:center;
+    background: #efefef;
+    padding:0 1em 1em 1em;
+    margin:0 auto;
+   
+}
+
+.portfolio{
+   display:grid;
+    height:60%;
+    a{
+     text-decoration: none;
+
+    }
+
+}
+
+.portfolioImage{
+    height:15em;
+    display:flex;
+    justify-content: center;
+    align-items: center; //aligning letters
+    background-blend-mode:soft-light;
+    background-position:center;
+    background-color:$mainColor;
+
+  
+}
+.portTitle{
+    color:white;
+    font-size: 2em;
+    letter-spacing: 0.12em;
+
+
+}
+ .portfolioImage:hover {
+     background-blend-mode: inherit;
+    
+     .portTitle{
+         opacity: 0;
+     }
+     .portSub{
+         opacity: 0;
+     }
+
+ }
+ .portSub{
+     color:white;
+     position: absolute;
+     margin-top:5em;
+ }
+
+
+ #image1{
+    background-image: url(..//images/pink.jpg);
+ 
+ }
+
+ #image2{
+    background-image: url(..//images/volume.JPG);
+.portTitle{
+    margin-left:0.7em;
+}
+ }
+ #image3{
+    background-image: url(..//images/thales.JPG);
+ 
+ }
+ #image4{
+    background-image: url(..//images/drawing.jpg);
+   // background-position-x: -15em;
+ 
+ }
+
+
+ //portfolio Glitch page
+ .subPortText{
+
+ }
+
+ .glitchContent{
+
+    flex: 1 1 80%;
+    // min-height:200vh;
+     justify-content: center;
+     align-items:center;
+    background-color:#efefef;
+     p{
+    
+         padding:4em 1em 5em 1em;
+         text-align: center;
+     }
+ }
+ 
+ .glitch1 {
+    display:grid;
+    grid-gap:10px;
+    margin-bottom:10%;
+
+   
+
+ }
+ 
+ .glitchImage{
+     
+     display:flex;
+     justify-content: center;
+
+  
+ }
+//about meeee section
+#aboutSection{
+    margin:0 auto;
+    }
+
+#aboutSection{
+   display:grid;
+   margin-bottom:2em;
+    h2{
+        color:white;
+    }
+  
+}
+
+#aboutTitle{
+    text-align: center;
+}
+#aboutContent{
+    margin: 0em 1em 1em 1em;
+   
+}
+
+
+.aboutBox{
+  
+    background-color:white;
+    margin-bottom:2em;
+    margin:0 auto;
+    padding:1em;
+   height:20em;
+   p{
+    padding:15%;
+}
+
+}
+.aboutText{
+   padding:5%;
+}
+
+ //InstagramFeed
+
+ .instaSection{
+
+    background-color: #efefef;
+     min-height:100vh;
+     margin: 0 auto;
+     display:flex;
+     width:100%;
+    // background:red;
+  
+ }
+
+ #instaTitle{
+     text-align: center;
+ }
+
+  .purpleButton{
+    margin-bottom:5%;
+    margin:0 auto;
+
+   
+}
+#buttonWrapper{
+    display:flex;
+width:100%;
+//background:red;
+height:5em;
+}
+
+#instafeed a{
+    margin:0.5em;
+    box-sizing: border-box;
+    position:relative;
+    display: inline-block;
+
+
+}
+#instafeed a .rollover {
+    background-color:rgba(0, 0, 0, 0.637);
+    position:absolute;
+    opacity:0;
+    transition: 400ms;
+    bottom: 2px; //somethings up with the grid probably
+    right: 0;
+    left: 0;
+    top: 0;
+   
+  }
+  #instafeed a:hover .rollover{
+      opacity:1;
+  }
+
+ #instafeed{
+     
+justify-content: center;
+margin:0 auto;
+text-align:center;
+
+}
+
+
+
+ .caption{
+     color:white;
+     text-align: center;
+     margin:1.2em;
+ }
+ //contact form
+ 
+
+//media queries 
+
+@media screen and (min-width:600px){
+    .titleText{
+ //    font-size:4em;
+    }.sectionArea{
+       //height:initial;
+    }
+    .sectionArea{
+        height: 550px;
+       }
+}
+
+
+@media screen and (min-width:800px){
+
+   
+    main{
+     // display:grid;
+
+    }
+    //scrollbar
+
+    //navigation
+    .navToggleLabel{
+        display:none;
+    }
+    header{
+        display:grid;
+        grid-template-columns:1fr auto minmax(600px,3fr) 1fr;
+   
+    }
+    .logo{
+        grid-column: 2 / span 1;
+    }
+    nav{
+        all:unset;
+        grid-column:3;
+        display:flex;
+       justify-content: flex-end;
+       //justify-content: center;
+        margin-top:1em;
+    }
+    nav ul{
+        display:flex;
+        justify-content: flex-end;
+    }
+    nav a{
+       
+        opacity:1;
+    }
+    .sectionArea{
+        height: 650px;
+       }
+    //index
+
+
+    .mainButton{
+        grid-row:4;
+        max-width:150px;
+     
+    }
+
+    .titleText{
+       // font-size:5em;
+  
+       
+    }
+
+
+    
+    #vidThumb{
+		display: none;
+    }
+    .hiddenMobile{
+        display:block;
+        width:100%;
+       // width:80%;
+    
+    }
+    .portfolio{ //portfolioo
+    grid-template-columns:repeat(2, 1fr);
+    margin-top:1em;
+     padding: 5%;
+     grid-gap:.5em;
+     justify-content: center;
+    
+     }
+
+ 
+    .portfolioContent{
+  //  min-height:100vh;
+    margin: 0 auto;
+    grid-row:1/3;
+
+    }
+.portfolioImage{
+        height:20em;
+    }
+
+ #image4{
+     background-position-x: -20em;
+ }
+ 
+    //portfolio Glitch page
+.glitch1{
+       // padding: 5%;
+       grid-template-columns:repeat(2, 2fr);
+       grid-row-gap:5%;
+
+      // grid-template-rows:repeat(2,1fr);
+     //  justify-items: center;
+    //
+    }
+    .glitchContent{
+        min-height:100vh;
+       margin:0 10% 0 10%;
+       padding:5%;
+       p{
+           margin:0 auto;
+           margin-top:4em;
+           
+    }
+
+  //Apropos moi
+  #aboutSection{
+
+      h2{
+          text-align: center;
+    
+      }
+
+
+ }
+  }
+
+
+   #aboutContent{
+    padding:0 4% 0 4%;
+
+    display:grid;
+    grid-gap:2em;
+   // grid-template-rows:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
+
+   }
+
+
+
+   .aboutBox{
+    width:80%;
+
+  p{
+      font-size:0.9em;
+      padding:0;
+  }
+   }
+
+    //instagram
+    #instaSection { 
+  
+        padding:0 5% 0 5%;
+        
+        }
+
+        
+
+    #instafeed img:hover{
+        border-radius:inherit; //add class back to js to get this to work
+    }
+    #instafeed a .rollover:hover{
+        border-radius:inherit;
+        transition:all 0.5s ease-out;
+    }
+    .contact{
+        width:500px;
+    }
+  #instaFeed{
+   
+  //  flex: 1 1 80%;
+  }
+   
+    @media screen and (min-width:1000px){
+        .titleText{
+            font-size: 7em;
+            grid-row:2;
+    
+           // margin-left:3em;
+        }
+        .sectionArea{
+         }
+        .mainButton{
+            grid-row:4;
+           // margin-top:20%;
+        }
+      
+        .glitch1{
+            grid-template-columns:repeat(4, 1fr);
+        }
+        .portfolio{ //xportfolioo
+           grid-template-columns:repeat(4, 1fr);
+      
+                  }
+                  #image2 .portTitle{
+                    // margin:0;
+                 }
+                 .portfolioImage{
+                    height:30em;
+                }
+   
+}
+
+}
